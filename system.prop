@@ -11,14 +11,14 @@ ro.bq.gpu_to_cpu_unsupported=1
 persist.tegra.nvmmlite = 1
 
 # HDMI only display
-persist.tegra.hdmi.primary = 1
+# persist.tegra.hdmi.primary = 1
 
 # hwcomposer selects max HDMI resolution
-persist.sys.hdmi.resolution = Max
+# persist.sys.hdmi.resolution = Max
 
 # hwcomposer tells surface flinger to always use 1920x1080 resolution
 # regardless of HDMI mode
-persist.sys.display.resolution = 1920x1080
+# persist.sys.display.resolution = 1920x1080
 
 # use glcomposer as the default compositor
 persist.tegra.compositor=glcomposer
