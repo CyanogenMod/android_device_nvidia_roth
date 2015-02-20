@@ -4,7 +4,6 @@ bin/gpslogd
 bin/input_cfboost_init.sh
 bin/js_daemon.sh
 bin/nvcgcserver
-bin/nvcpud
 bin/nvcpuvoltcapd
 bin/nv_hciattach
 bin/pbc
@@ -21,7 +20,6 @@ etc/firmware/nvavp_os_eff00000.bin
 etc/firmware/nvavp_vid_ucode_alt.bin
 etc/firmware/tegra11x/nvhost_msenc02.fw
 etc/firmware/tegra11x/nvhost_tsec.fw
-etc/nvcpud.conf
 etc/nvram_43241.txt
 lib/egl/libEGL_tegra.so
 lib/egl/libGLESv1_CM_tegra.so
@@ -53,8 +51,6 @@ lib/libnvcapaudioservice.so
 lib/libnvcapclk.so
 lib/libnvcms.so
 lib/libnvcpl.so
-lib/libnvcpud_client.so
-lib/libnvcpud.so
 lib/libnvddk_2d.so
 lib/libnvddk_2d_v2.so
 lib/libnvfusebypass.so
@@ -97,7 +93,6 @@ lib/libsensors.mpl.so
 lib/libsensors.nvs_input.so
 lib/libstagefrighthw.so
 lib/libtf_crypto_sst.so
-lib/libtinyalsa.so
 lib/libtsechdcp.so
 lib/libtsec_wrapper.so
 lib/libWVphoneAPI.so
