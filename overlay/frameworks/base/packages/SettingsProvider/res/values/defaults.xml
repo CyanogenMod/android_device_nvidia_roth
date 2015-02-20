@@ -17,10 +17,7 @@
  */
 -->
 <resources>
-    <integer name="def_screen_off_timeout">1800000</integer>
-    <bool name="def_wifi_on">true</bool>
-    <bool name="def_bluetooth_on">true</bool>
-    <bool name="def_lockscreen_disabled">true</bool>
+    <integer name="def_screen_off_timeout">120000</integer>
     <bool name="def_accelerometer_rotation">false</bool>
-    <integer name="def_battery_style">4</integer>
+    <bool name="def_lockscreen_disabled">true</bool>
 </resources>

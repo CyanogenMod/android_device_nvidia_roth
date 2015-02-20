@@ -64,7 +64,23 @@ PRODUCT_COPY_FILES += \
 
 # GPS
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/gps/gpsconfig.xml:system/etc/gps/gpsconfig.xml 
+    $(LOCAL_PATH)/gps/gpsconfig.xml:system/etc/gps/gpsconfig.xml
+
+# Idc
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/idc/raydium_ts.idc:system/usr/idc/raydium_ts.idc
+
+# Keychars
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keychars/Vendor_0955_Product_7202.kcm:system/usr/keychars/Vendor_0955_Product_7202.kcm
+
+# Keylayout
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/Vendor_0955_Product_7202.kl:system/usr/keylayout/Vendor_0955_Product_7202.kl
+
+# Lights
+PRODUCT_PACKAGES += \
+    lights.roth
 
 # Media config
 PRODUCT_COPY_FILES += \

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /*
-** Copyright 2014, The Android Open Source Project
+** Copyright 2009, The Android Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -29,9 +29,9 @@
     <!-- An Array of "[Connection name],[ConnectivityManager connection type],
          [associated radio-type],[priority]  -->
     <string-array translatable="false" name="networkAttributes">
-        <item>wifi,1,1,1,-1,true</item>
-        <item>bluetooth,7,7,3,-1,true</item>
-        <item>ethernet,9,9,0,-1,true</item>
+        <item>"wifi,1,1,1,-1,true"</item>
+        <item>"bluetooth,7,7,0,-1,true"</item>
+        <item>"ethernet,9,9,2,-1,true"</item>
     </string-array>
 
     <!-- This array should be overridden by the device to present a list of radio
@@ -40,10 +40,25 @@
     <!-- An array of "[ConnectivityManager connectionType],
                       [# simultaneous connection types]" -->
     <string-array translatable="false" name="radioAttributes">
-        <item>1,1</item>
-        <item>7,1</item>
-        <item>9,0</item>
+        <item>"1,1"</item>
+        <item>"7,1"</item>
+        <item>"9,0"</item>
     </string-array>
+
+    <!-- List of regexpressions describing the interface (if any) that represent tetherable
+         USB interfaces.  If the device doesn't want to support tething over USB this should
+         be empty.  An example would be "usb.*" -->
+    <string-array translatable="false" name="config_tether_usb_regexs">
+        <item>"rndis0"</item>
+    </string-array>
+
+    <!-- Array of allowable ConnectivityManager network types for tethering -->
+     <integer-array translatable="false" name="config_tether_upstream_types">
+         <item>0</item>
+         <item>1</item>
+         <item>5</item>
+         <item>7</item>
+    </integer-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
@@ -59,15 +74,10 @@
         <item>"bt-pan"</item>
     </string-array>
 
-    <!-- Enable electronBeam animation instead of fading off. -->
-    <bool name="config_animateScreenLights">false</bool>
-
-    <!-- Boolean indicating whether the wifi chipset supports background scanning mechanism.
-         This mechanism allows the host to remain in suspend state and the dongle to actively
-         scan and wake the host when a configured SSID is detected by the dongle. This chipset
-         capability can provide power savings when wifi needs to be always kept on.
-         The driver commands needed to support the feature are BGSCAN-START and BGSCAN-STOP -->
-    <bool name="config_wifi_background_scan_support">true</bool>
+    <!-- Indicate whether closing the lid causes the device to go to sleep and opening
+         it causes the device to wake up.
+         The default is false. -->
+    <bool name="config_lidControlsSleep">true</bool>
 
     <!-- Flag indicating whether the current device is "voice capable".
          If true, this means that the device supports circuit-switched
@@ -93,7 +103,23 @@
     <!-- Set to true to add links to Cell Broadcast app from Settings and MMS app. -->
     <bool name="config_cellBroadcastAppLinks">false</bool>
 
-    <!-- Hardware 'face' keys present on the device, stored as a bit field.
+    <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
+    <bool name="config_unplugTurnsOnScreen">true</bool>
+
+    <!-- Enable electronBeam animation instead of fading off. -->
+    <bool name="config_animateScreenLights">false</bool>
+
+    <!-- Boolean indicating whether the wifi chipset supports background scanning mechanism.
+         This mechanism allows the host to remain in suspend state and the dongle to actively
+         scan and wake the host when a configured SSID is detected by the dongle. This chipset
+         capability can provide power savings when wifi needs to be always kept on.
+         The driver commands needed to support the feature are BGSCAN-START and BGSCAN-STOP -->
+    <bool name="config_wifi_background_scan_support">true</bool>
+
+    <!-- Integer indicating wpa_supplicant scan interval in milliseconds -->
+    <integer translatable="false" name="config_wifi_supplicant_scan_interval">60000</integer>
+
+    <!-- Hardware keys present on the device, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
          of the following keys present:
              1 - Home
@@ -101,9 +127,25 @@
              4 - Menu
              8 - Assistant (search)
             16 - App switch
+            32 - Camera
+            64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
     <integer name="config_deviceHardwareKeys">0</integer>
+
+    <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following keys present:
+             1 - Home
+             2 - Back
+             4 - Menu
+             8 - Assistant (search)
+            16 - App switch
+            32 - Camera
+            64 - Volume rocker
+         For example, a device with Home, Back and Menu keys would set this
+         config to 7. -->
+    <integer name="config_deviceHardwareWakeKeys">0</integer>
 
     <!-- Control the behavior when the user long presses the home button.
             0 - Nothing
@@ -115,36 +157,17 @@
          This needs to match the constants in
          policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
     -->
-    <integer name="config_longPressOnHomeBehavior">0</integer>
+    <integer name="config_longPressOnHomeBehavior">2</integer>
 
-    <!-- Control the behavior when the user double-taps the home button.
-            0 - Nothing
-            1 - Menu key
-            2 - Recent apps view in SystemUI
-            3 - Launch assist intent
-            4 - Voice Search
-            5 - In-app Search
-         This needs to match the constants in
-         policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
-    -->
-    <integer name="config_doubleTapOnHomeBehavior">2</integer>
-
-   <!-- If true, the screen can be rotated via the accelerometer in all 4
-         rotations as the default behavior. -->
-    <bool name="config_allowAllRotations">false</bool>
-
-    <!-- Flag indicating that this device does not rotate and will always remain in its default
-         orientation. Activities that desire to run in a non-compatible orientation will be run
-         from an emulated display within the physical display. -->
-    <bool name="config_forceDefaultOrientation">true</bool>
-
-    <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
-         autodetected from the Configuration. -->
-    <bool name="config_showNavigationBar">true</bool>
-
-    <!-- Maximum number of supported users -->
+    <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">8</integer>
     <!-- Whether UI for multi user should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
+
+    <!--  LED on time for low-battery LED warning  -->
+    <integer name="config_notificationsBatteryLedOn">500</integer>
+
+    <!--  LED off time for low-battery LED warning  -->
+    <integer name="config_notificationsBatteryLedOff">500</integer>
 
 </resources>
