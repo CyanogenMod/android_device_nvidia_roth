@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 
-<!-- These are the hardware components that mojo includes.
+<!-- These are the hardware components that roth includes.
 -->
 <permissions>
     <feature name="android.hardware.type.television" />
