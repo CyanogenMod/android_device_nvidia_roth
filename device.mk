@@ -17,6 +17,10 @@
 # Roth screen sizes: 640dp/360dp  960dp/540dp
 PRODUCT_AAPT_CONFIG := mdpi hdpi xhdpi sw320dp sw340dp sw360dp sw380dp sw540dp small normal
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 720
+TARGET_SCREEN_WIDTH := 1280
+
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, vendor/nvidia/roth/roth-vendor.mk)
