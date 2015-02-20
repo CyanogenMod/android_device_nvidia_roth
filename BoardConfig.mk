@@ -34,8 +34,6 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_KERNEL_SOURCE := kernel/nvidia/roth
 TARGET_KERNEL_CONFIG := cyanogenmod_roth_defconfig
 
-# Audio
-
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true

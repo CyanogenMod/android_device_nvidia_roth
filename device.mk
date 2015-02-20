@@ -78,10 +78,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/com.nvidia.nvsi.xml:system/etc/permissions/com.nvidia.nvsi.xml
 
-# Roth
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/permissions/roth_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
-
 # Wifi
 PRODUCT_PACKAGES += \
     hostapd \
