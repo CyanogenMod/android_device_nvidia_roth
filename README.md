@@ -1,4 +1,4 @@
-# Device configuration for Nvidia Shield Portable
+# Device configuration for NVIDIA SHIELD
 
 ## Spec Sheet
 | Feature                 | Specification                     |
@@ -16,7 +16,7 @@
 | Release Date            | July 31, 2013                     |
 
 ## Device Picture
-![Nvidia Shield Portable](http://www.xbitlabs.com/images/news/2013-01/nvidia_shield.jpg "Nvidia Shield Portable")
+![NVIDIA SHIELD ](http://www.xbitlabs.com/images/news/2013-01/nvidia_shield.jpg "NVIDIA SHIELD")
 
 ## Copyright
 
