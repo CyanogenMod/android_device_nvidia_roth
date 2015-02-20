@@ -34,6 +34,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
 # Kernel
+BOARD_KERNEL_CMDLINE := androidboot.selinux=disabled
 TARGET_KERNEL_SOURCE := kernel/nvidia/roth
 TARGET_KERNEL_CONFIG := cyanogenmod_roth_defconfig
 
