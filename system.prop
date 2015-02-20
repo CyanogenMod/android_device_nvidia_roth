@@ -1,7 +1,3 @@
-#
-# system.prop for roth
-#
-
 ro.opengles.version = 131072
 wifi.interface=wlan0
 ap.interface=wlan0
