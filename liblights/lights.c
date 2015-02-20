@@ -112,7 +112,7 @@ static int read_string(char const *path, char *str, int n)
         return amt == -1 ? -errno : 0;
     } else {
         if (already_warned == -1) {
-            ALOGE("read_string failed to open %s\n", path);
+            ALOGE("write_string failed to open %s\n", path);
             already_warned = 1;
         }
         return -errno;
@@ -190,16 +190,15 @@ static int set_light_thor(struct light_device_t *dev,
         off = BLINK_LIMIT_MS;
 
     pthread_mutex_lock(&g_lock);
+
     if (mode == LIGHT_FLASH_NONE) {
         err = write_string(SYS_PATH_LED_TRIGGER, "none");
         err |= write_int(SYS_PATH_LED_BRIGHTNESS, brightness);
     } else if (mode == LIGHT_FLASH_TIMED) {
+        if (state->brightnessMode == BRIGHTNESS_MODE_USER)
+            err = write_int(SYS_PATH_LED_BRIGHTNESS, brightness);
+        err |= write_string(SYS_PATH_LED_TRIGGER, "timer");
         err |= blink_led(on, off);
-        err |= write_int(SYS_PATH_LED_BRIGHTNESS, brightness);
-    } else if (mode == LIGHT_BREATHE_ON) {
-        set_property_int(LED_BREATHE_PROP, 1);
-    } else if (mode == LIGHT_BREATHE_OFF) {
-        set_property_int(LED_BREATHE_PROP, 0);
     } else {
         pthread_mutex_unlock(&g_lock);
         return -EINVAL;
@@ -261,8 +260,6 @@ static int open_lights(const struct hw_module_t *module, char const *name,
 
     if (0 == strcmp(LIGHT_ID_BACKLIGHT, name))
         set_light = set_light_backlight;
-    else if (0 == strcmp(LIGHT_ID_THOR, name))
-        set_light = set_light_thor;
     else
         return -EINVAL;
 
