@@ -26,8 +26,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 # Inherit from roth device
 $(call inherit-product, device/nvidia/roth/device.mk)
 
-PRODUCT_NAME := full_roth
+PRODUCT_NAME := full_thor
 PRODUCT_DEVICE := roth
-PRODUCT_BRAND := Nvidia
-PRODUCT_MODEL := Nvidia Shield Portable
-PRODUCT_MANUFACTURER := Nvidia
+PRODUCT_BRAND := nvidia
+PRODUCT_MODEL := SHIELD
+PRODUCT_MANUFACTURER := NVIDIA

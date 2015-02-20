@@ -1,1 +1,1 @@
-add_lunch_combo cm_roth-userdebug
+add_lunch_combo cm_thor-userdebug

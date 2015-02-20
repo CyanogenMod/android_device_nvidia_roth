@@ -1,14 +1,13 @@
 # Inherit device configuration for roth.
-$(call inherit-product, device/nvidia/roth/full_roth.mk)
+$(call inherit-product, device/nvidia/roth/full_thor.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=roth \
+    PRODUCT_NAME=thor \
     TARGET_DEVICE=roth \
     BUILD_FINGERPRINT="nvidia/thor/roth:4.4.2/KOT49H/eng.unjust.20150214.233911:userdebug/test-keys" \
     PRIVATE_BUILD_DESC="thor-userdebug 4.4.2 KOT49H eng.unjust.20150214.233911 test-keys"
 
-PRODUCT_NAME := cm_roth
-PRODUCT_DEVICE := roth
+PRODUCT_NAME := cm_thor
