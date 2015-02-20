@@ -11,7 +11,6 @@ bin/powerservice
 bin/rm_ts_server
 bin/tf_daemon
 bin/wlbwservice
-etc/bluetooth/bdaddr
 etc/enctune.conf
 etc/firmware/bcm43241.hcd
 etc/firmware/nvavp_aud_ucode.bin
@@ -88,6 +87,8 @@ lib/libnvwsi.so
 lib/liboemcrypto.so
 lib/libpowerservice_client.so
 lib/libpowerservice.so
+lib/librm31080.so
+lib/librm_ts_service.so
 lib/libsensors.base.so
 lib/libsensors.mpl.so
 lib/libsensors.nvs_input.so
@@ -96,7 +97,6 @@ lib/libtf_crypto_sst.so
 lib/libtsechdcp.so
 lib/libtsec_wrapper.so
 lib/libWVphoneAPI.so
-lib/nvcms/device.cfg
 vendor/firmware/bcm43241/fw_bcmdhd_apsta.bin
 vendor/firmware/bcm43241/fw_bcmdhd.bin
 vendor/lib/drm/libdrmwvmplugin.so
