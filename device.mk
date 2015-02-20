@@ -14,37 +14,38 @@
 # limitations under the License.
 #
 
-# Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal large tvdpi hdpi
-PRODUCT_AAPT_PREF_CONFIG := tvdpi
+# Roth screen sizes: 640dp/360dp  960dp/540dp
+PRODUCT_AAPT_CONFIG := mdpi hdpi xhdpi sw320dp sw340dp sw360dp sw380dp sw540dp small normal
 
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
-$(call inherit-product-if-exists, vendor/madcatz/mojo/mojo-vendor.mk)
+$(call inherit-product-if-exists, vendor/nvidia/roth/roth-vendor.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    device/madcatz/mojo/overlay
+    device/nvidia/roth/overlay
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    fstab.mojo \
-    init.mojo.rc \
-    init.mojo.usb.rc \
-    power.mojo.rc \
-    ueventd.mojo.rc
+    fstab.roth \
+    init.roth.rc \
+    init.roth.usb.rc \
+    init.thor.rc \
+    power.roth.rc \
+    ueventd.roth.rc
 
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
-    frameworks/native/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
+    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
-    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -61,6 +62,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
 
+# GPS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/gps/gpsconfig.xml:system/etc/gps/gpsconfig.xml 
+
 # Media config
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
@@ -69,24 +74,21 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml
 
-# M.O.J.O.
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/permissions/mojo_hardware.xml:system/etc/permissions/mojo_hardware.xml
-
 # NVIDIA
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/com.nvidia.nvsi.xml:system/etc/permissions/com.nvidia.nvsi.xml
 
+# Roth
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/permissions/roth_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
+
+# Wifi
 PRODUCT_PACKAGES += \
     hostapd \
     wpa_supplicant \
     wpa_supplicant.conf
 
 PRODUCT_CHARACTERISTICS := tablet
-
-# Adb over TCP
-PRODUCT_PROPERTY_OVERRIDES += \
-    service.adb.tcp.port=5555
 
 # Debugging
 ADDITIONAL_DEFAULT_PROPERTIES += \
