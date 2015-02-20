@@ -373,18 +373,6 @@ service pbc /system/bin/pbc
     user system
     group system
 
-on property:ril.testmode=1
-    stop ril-daemon
-    start ril-daemon-test
-
-on property:ril.testmode=0
-    stop ril-daemon-test
-    start ril-daemon
-
-# Very first boot. This case should be below the above case in init.rc so that
-# the above case, does not get executed on first boot. Very first boot is setting
-# persist.wlan.ti.calibrated=1 which triggers the above case.
-
 service dns_masq /system/bin/dnsmasq --no-daemon --no-resolv --no-poll --dhcp-option-force=43,ANDROID_METERED --dhcp-range=192.168.42.2,192.168.42.254,1h &
     class main
     user dhcp
