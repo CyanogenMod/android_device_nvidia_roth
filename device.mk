@@ -27,7 +27,8 @@ $(call inherit-product-if-exists, vendor/nvidia/roth/roth-vendor.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    device/nvidia/roth/overlay
+    device/nvidia/roth/overlay \
+    device/nvidia/roth/shield_strings/overlay
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -108,7 +109,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
-PRODUCT_CHARACTERISTICS := tablet
+PRODUCT_CHARACTERISTICS := shield
 
 # Debugging
 ADDITIONAL_DEFAULT_PROPERTIES += \
