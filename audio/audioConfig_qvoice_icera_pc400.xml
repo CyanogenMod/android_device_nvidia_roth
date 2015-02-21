@@ -399,7 +399,7 @@
     <rxAdjustGain>0</rxAdjustGain>
     <audioLoop><undefLoop/></audioLoop>
     <isAecEnabled><true/></isAecEnabled>
-    <echoPathDelay>316</echoPathDelay>
+    <echoPathDelay>240</echoPathDelay>
     <echoTailLength>320</echoTailLength>
     <echoDuplexTuner>5</echoDuplexTuner>
     <isResidualEchoSuppressorEnabled><true/></isResidualEchoSuppressorEnabled>
@@ -414,11 +414,11 @@
     <residualGainTime16k>16</residualGainTime16k>
     <couplingMaxHandset16k>0</couplingMaxHandset16k>
     <doubleTalkThreshold16k>19661</doubleTalkThreshold16k>
-    <isBeamformerEnabled><true/></isBeamformerEnabled>
+    <isBeamformerEnabled><false/></isBeamformerEnabled>
     <micSeparation>120</micSeparation>
     <arrayMode><qvoicePrimarymic/></arrayMode>
     <farTalkTargetAngle>90</farTalkTargetAngle>
-    <isBeamsteeringEnabled><true/></isBeamsteeringEnabled>
+    <isBeamsteeringEnabled><false/></isBeamsteeringEnabled>
     <spatialRejectionTuner>3</spatialRejectionTuner>
     <beamsteeringAdaptTime>7500</beamsteeringAdaptTime>
     <closeTalkSourceDistance>45</closeTalkSourceDistance>
@@ -530,7 +530,7 @@
         <Integer32>141</Integer32>
         <Integer32>141</Integer32>
     </rxBandQFactor16k>
-    <bulkIndex>5</bulkIndex>
+    <bulkIndex>3</bulkIndex>
     <rxBulkLevel>
         <Integer32>-1200</Integer32>
         <Integer32>-600</Integer32>
@@ -713,7 +713,7 @@
         <Integer32>141</Integer32>
         <Integer32>141</Integer32>
     </rxBandQFactor16k>
-    <bulkIndex>5</bulkIndex>
+    <bulkIndex>3</bulkIndex>
     <rxBulkLevel>
         <Integer32>-1200</Integer32>
         <Integer32>-600</Integer32>
@@ -1079,7 +1079,7 @@
         <Integer32>141</Integer32>
         <Integer32>141</Integer32>
     </rxBandQFactor16k>
-    <bulkIndex>4</bulkIndex>
+    <bulkIndex>3</bulkIndex>
     <rxBulkLevel>
         <Integer32>-1200</Integer32>
         <Integer32>-600</Integer32>
@@ -1262,7 +1262,7 @@
         <Integer32>141</Integer32>
         <Integer32>141</Integer32>
     </rxBandQFactor16k>
-    <bulkIndex>4</bulkIndex>
+    <bulkIndex>3</bulkIndex>
     <rxBulkLevel>
         <Integer32>-1200</Integer32>
         <Integer32>-600</Integer32>
@@ -1445,7 +1445,7 @@
         <Integer32>141</Integer32>
         <Integer32>141</Integer32>
     </rxBandQFactor16k>
-    <bulkIndex>4</bulkIndex>
+    <bulkIndex>3</bulkIndex>
     <rxBulkLevel>
         <Integer32>-1200</Integer32>
         <Integer32>-600</Integer32>
@@ -1628,7 +1628,7 @@
         <Integer32>141</Integer32>
         <Integer32>141</Integer32>
     </rxBandQFactor16k>
-    <bulkIndex>4</bulkIndex>
+    <bulkIndex>3</bulkIndex>
     <rxBulkLevel>
         <Integer32>-1200</Integer32>
         <Integer32>-600</Integer32>
@@ -1811,7 +1811,7 @@
         <Integer32>141</Integer32>
         <Integer32>141</Integer32>
     </rxBandQFactor16k>
-    <bulkIndex>4</bulkIndex>
+    <bulkIndex>3</bulkIndex>
     <rxBulkLevel>
         <Integer32>-1200</Integer32>
         <Integer32>-600</Integer32>
@@ -1994,7 +1994,7 @@
         <Integer32>141</Integer32>
         <Integer32>141</Integer32>
     </rxBandQFactor16k>
-    <bulkIndex>4</bulkIndex>
+    <bulkIndex>3</bulkIndex>
     <rxBulkLevel>
         <Integer32>-1200</Integer32>
         <Integer32>-600</Integer32>
