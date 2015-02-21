@@ -81,7 +81,9 @@ PRODUCT_COPY_FILES += \
 
 # Keylayout
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/Vendor_0955_Product_7202.kl:system/usr/keylayout/Vendor_0955_Product_7202.kl
+    $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/gpio-keys.kl \
+    $(LOCAL_PATH)/keylayout/Vendor_0955_Product_7202.kl:system/usr/keylayout/Vendor_0955_Product_7202.kl \
+    $(LOCAL_PATH)/keylayout/Vendor_0955_Product_7203.kl:system/usr/keylayout/Vendor_0955_Product_7203.kl
 
 # Lights
 PRODUCT_PACKAGES += \
