@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="setup_complete_summary" product="shield">Congratulations! Your SHIELD is ready to rumble.</string>
+    <string name="setup_welcome_summary" product="shield">To get started setting up your SHIELD, select your language and continue.</string>
+    <string name="setup_warning_skip_wifi" product="shield">WARNING: You may incur extra carrier data charges.\n\nSHIELD setup can require significant network activity.</string>
+    <string name="sim_missing_summary" product="shield">You need to refer to the SIM card instructions that came with your SHIELD.</string>
+    <string name="location_street_level" product="shield">Allow apps to use GPS on your SHIELD to pinpoint your location</string>
+</resources>
