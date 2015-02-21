@@ -17,6 +17,8 @@
 # This variable is set first, so it can be overridden
 # by BoardConfigVendor.mk
 
+TARGET_SPECIFIC_HEADER_PATH := device/nvidia/roth/include
+
 # Architecture
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
