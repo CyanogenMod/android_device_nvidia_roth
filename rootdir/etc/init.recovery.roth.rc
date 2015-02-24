@@ -1,0 +1,18 @@
+on init
+    
+    # touchscreen
+    mkdir /mnt/factory 0666 system system
+
+on boot
+    # touchscreen
+    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/FCT /mnt/factory ro
+
+# Always start adbd on userdebug and eng builds
+on property:ro.debuggable=1
+    mkdir /system/bin 0666 system system
+    symlink /sbin/busybox /system/bin/sh
+    write /sys/class/android_usb/android0/enable 1
+    start adbd
+
+# touchscreen
+service rm_ts_service /system/bin/rm-runner.sh

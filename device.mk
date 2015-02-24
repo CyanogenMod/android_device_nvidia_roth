@@ -34,6 +34,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     fstab.roth \
     init.roth.rc \
+    init.recovery.roth.rc \
     init.roth.usb.rc \
     init.thor.rc \
     power.roth.rc \
