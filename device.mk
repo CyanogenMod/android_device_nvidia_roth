@@ -112,12 +112,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_CHARACTERISTICS := shield
 
-# Debugging
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.adb.secure=0 \
-    ro.secure=0 \
-    ro.debuggable=1
-
 # Enable USB OTG interface
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.isUsbOtgEnabled=1
