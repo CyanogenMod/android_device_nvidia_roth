@@ -47,6 +47,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/nvidia/roth/bluetooth
 
 # Graphics
 USE_OPENGL_RENDERER := true
+SF_VSYNC_EVENT_PHASE_OFFSET_NS := 1
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
