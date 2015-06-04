@@ -1,7 +1,7 @@
+# Graphics settings
 ro.opengles.version = 131072
 wifi.interface=wlan0
 ap.interface=wlan0
-#ro.sf.lcd_density=320
 ro.sf.override_null_lcd_density=1
 persist.tegra.panel.rotation = 90
 
@@ -10,16 +10,6 @@ ro.bq.gpu_to_cpu_unsupported=1
 
 # from dalmore, check nvidia
 persist.tegra.nvmmlite = 1
-
-# HDMI only display
-# persist.tegra.hdmi.primary = 1
-
-# hwcomposer selects max HDMI resolution
-# persist.sys.hdmi.resolution = Max
-
-# hwcomposer tells surface flinger to always use 1920x1080 resolution
-# regardless of HDMI mode
-# persist.sys.display.resolution = 1920x1080
 
 # use glcomposer as the default compositor
 persist.tegra.compositor=glcomposer
@@ -46,3 +36,11 @@ ro.zygote.disable_gl_preload=true
 
 # Set carrier
 ro.carrier=wifi-only
+
+# USB Settings
+persist.sys.usb.config=mtp
+persist.sys.isUsbOtgEnabled=1
+
+# Widevine drm
+drm.service.enabled=true \
+ro.com.widevine.cachesize=16777216

@@ -112,18 +112,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_CHARACTERISTICS := shield
 
-# Enable USB OTG interface
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.isUsbOtgEnabled=1
-
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
-
-# Enable Widevine drm
-PRODUCT_PROPERTY_OVERRIDES += \
-    drm.service.enabled=true \
-    ro.com.widevine.cachesize=16777216
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
