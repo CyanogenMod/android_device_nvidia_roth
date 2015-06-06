@@ -105,3 +105,7 @@ vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L1.so
 vendor/lib/mediadrm/libwvdrmengine.so
+vendor/bin/blake
+vendor/lib/libblake_jni.so
+vendor/lib/liblota.so
+vendor/lib/hw/blake.tegra.so
