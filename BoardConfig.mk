@@ -77,6 +77,9 @@ BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_bcmdhd
 WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_AP           := "/system/vendor/firmware/bcm43241/fw_bcmdhd_apsta.bin"
 WIFI_DRIVER_FW_PATH_STA          := "/system/vendor/firmware/bcm43241/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_P2P          := "/system/vendor/firmware/bcm43241/fw_bcmdhd_p2p.bin"
+WIFI_DRIVER_MODULE_ARG           := "iface_name=wlan0"
+WIFI_DRIVER_MODULE_NAME          := "bcmdhd"
 
 BOARD_HARDWARE_CLASS := device/nvidia/roth/cmhw/
 
