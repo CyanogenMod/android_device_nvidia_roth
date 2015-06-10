@@ -122,3 +122,6 @@ PRODUCT_PACKAGES += \
     setup_fs
 
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
+
+# Wireless Controller
+PRODUCT_PACKAGES += BlakePairing
