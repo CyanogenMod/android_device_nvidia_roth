@@ -1,0 +1,39 @@
+# Copyright (c) 2014-2015, NVIDIA CORPORATION.  All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#touch_fusion
+
+type touch, domain;
+type touch_exec, exec_type, file_type;
+
+init_daemon_domain(touch)
+domain_auto_trans(kernel, touch_exec, touch)
+
+allow touch graphics_device:chr_file { read ioctl open };
+allow touch graphics_device:dir search;
+allow touch kmsg_device:chr_file { write getattr open };
+allow touch self:capability { net_admin sys_nice };
+allow touch self:netlink_socket { write bind create read setopt };
+
+# input-cfboost
+
+type input-cfboost, domain;
+type input-cfboost_exec, exec_type, file_type;
+
+init_daemon_domain(input-cfboost)
+
+allow input-cfboost shell_exec:file read;
+allow input-cfboost system_file:file execute_no_trans;
+allow input-cfboost sysfs_input-cfboost:file rw_file_perms;
+allow input-cfboost sysfs_input-cfboost:dir search;

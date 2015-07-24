@@ -1,0 +1,25 @@
+# Copyright (c) 2014, NVIDIA CORPORATION.  All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+type powerserv, domain;
+type powerserv_exec, exec_type, file_type;
+
+init_daemon_domain(powerserv)
+unix_socket_connect(powerserv, property, init)
+
+allow powerserv default_prop:property_service set;
+allow powerserv servicemanager:binder { call transfer };
+allow powerserv system_app_service:service_manager add;
+allow servicemanager powerserv:process getattr;
+allow powerserv system_server:binder call;

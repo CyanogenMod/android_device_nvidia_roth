@@ -49,6 +49,8 @@
 /dev/cpu_freq_max	0660	system	system
 /dev/min_online_cpus	0660	system	system
 /dev/max_online_cpus	0660	system	system
+/dev/gpu_freq_min       0660    system  system
+/dev/emc_freq_min       0660    system  system
 /dev/quadd      0660    shell   shell
 /dev/quadd_auth 0660    system  system
 /sys/devices/platform/leds_pwm/leds/roth-led   delay_on      0660  system  system

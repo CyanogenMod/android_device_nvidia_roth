@@ -36,7 +36,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := androidboot.selinux=disabled
+BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
 TARGET_KERNEL_SOURCE := kernel/nvidia/roth
 TARGET_KERNEL_CONFIG := cyanogenmod_roth_defconfig
 
@@ -84,3 +84,47 @@ WIFI_DRIVER_MODULE_NAME          := "bcmdhd"
 BOARD_HARDWARE_CLASS := device/nvidia/roth/cmhw/
 
 MALLOC_IMPL := dlmalloc
+
+BOARD_SEPOLICY_DIRS := device/nvidia/roth/sepolicy/
+BOARD_SEPOLICY_UNION := \
+        te_macros \
+        bootanim.te \
+        comms.te \
+        btmacwriter.te \
+        device.te \
+        domain.te \
+        drmserver.te \
+        file_contexts \
+        file.te \
+        genfs_contexts \
+        gpsd.te \
+        init.te \
+        installd.te \
+        mediaserver.te \
+        netd.te \
+        platform_app.te \
+        powerserv.te \
+        property_contexts \
+        property.te \
+        servicemanager.te \
+        service_contexts \
+        set_hwui.te \
+        setup_fs.te \
+        shell.te \
+        surfaceflinger.te \
+        system_app.te \
+        system_server.te \
+        tee.te \
+        touch.te \
+        ueventd.te \
+        untrusted_app.te \
+        vold.te \
+        installd.te \
+        platform_app.te \
+        wl18xx.te \
+        zygote.te \
+        nvlogd.te \
+        sdcardd.te \
+        cpuvoltcap.te \
+        jscheck.te \
+        recovery.te
