@@ -18,7 +18,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_SHARED_LIBRARIES := liblog libcutils
-LOCAL_SRC_FILES := power_roth.cpp
+LOCAL_SRC_FILES := power_roth.cpp nvpowerhal.cpp timeoutpoker.cpp powerhal_utils.cpp
 LOCAL_MODULE := power.roth
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
