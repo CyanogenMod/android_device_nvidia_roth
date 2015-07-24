@@ -45,6 +45,8 @@ vendor/lib/libnvavp.so
 vendor/lib/libnvblit.so
 vendor/lib/libnvcapaudioservice.so
 vendor/lib/libnvcapclk.so
+vendor/lib/libnvcap.so
+vendor/lib/libnvcap_video.so
 vendor/lib/libnvcms.so
 vendor/lib/libnvcpl.so
 vendor/lib/libnvddk_2d.so
