@@ -123,4 +123,4 @@ PRODUCT_PACKAGES += \
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
 
 # Wireless Controller
-PRODUCT_PACKAGES += BlakePairing
+$(call inherit-product-if-exists, vendor/nvidia/shield_common/blake-blobs.mk)
