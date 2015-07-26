@@ -3,6 +3,7 @@ ro.opengles.version = 131072
 wifi.interface=wlan0
 ap.interface=wlan0
 ro.sf.override_null_lcd_density=1
+ro.sf.lcd_density=320
 persist.tegra.panel.rotation = 90
 
 # GPU producer to CPU consumer not supported
@@ -42,5 +43,5 @@ persist.sys.usb.config=mtp
 persist.sys.isUsbOtgEnabled=1
 
 # Widevine drm
-drm.service.enabled=true \
+drm.service.enabled=true
 ro.com.widevine.cachesize=16777216
