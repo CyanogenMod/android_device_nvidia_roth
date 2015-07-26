@@ -55,8 +55,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
 
 # Power HAL
-PRODUCT_PACKAGES += \
-    power.roth
+#PRODUCT_PACKAGES += \
+#    power.roth
 
 # Audio
 PRODUCT_COPY_FILES += \
