@@ -33,9 +33,12 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.roth \
+    init.common.rc \
     init.roth.rc \
+    init.rothdir.rc \
     init.recovery.roth.rc \
     init.roth.usb.rc \
+    init.tf.rc \
     init.thor.rc \
     power.roth.rc \
     ueventd.roth.rc
