@@ -24,3 +24,4 @@ nvidia.inputservice         u:object_r:system_server_service:s0
 tegraoverlay            u:object_r:system_server_service:s0
 nvlogd					u:object_r:system_app_service:s0
 jscheck					u:object_r:system_app_service:s0
+raydium.ts_service	u:object_r:raydium_touch_service:s0

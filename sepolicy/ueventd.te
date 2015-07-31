@@ -29,3 +29,4 @@ allow ueventd sysfs_thermal:{ file dir lnk_file } relabelto;
 allow ueventd sysfs_thermal:file rw_file_perms;
 allow ueventd sysfs_ozmo:{ file dir lnk_file } relabelto;
 allow ueventd sysfs_ozmo:file rw_file_perms;
+allow ueventd sysfs_touch_calib:file rw_file_perms;

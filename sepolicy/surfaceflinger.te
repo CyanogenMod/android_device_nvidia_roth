@@ -36,3 +36,5 @@ allow surfaceflinger system_app_data_file:dir { create search };
 allow surfaceflinger system_data_file:dir { create add_name remove_name read open rw_dir_perms };
 allow surfaceflinger system_data_file:sock_file { unlink create setattr };
 allow surfaceflinger system_data_file:file { create write open lock };
+
+allow surfaceflinger sysfs_slowscan:file { open write };

@@ -99,3 +99,12 @@ type sysfs_tegra_cpu_volt_cap, fs_type, sysfs_type;
 
 # /sys/devices/platform/leds_pwm/leds/roth-led/brightness
 type sysfs_led, fs_type, sysfs_type;
+
+# /sys/devices/virtual/misc/touch/...
+type sysfs_touch_calib, fs_type, sysfs_type;
+
+# /sys/devices/virtual/misc/touch/slowscan_enable
+type sysfs_slowscan, fs_type, sysfs_type;
+
+# Touch specific file
+type touch_private_file, file_type, data_file_type;

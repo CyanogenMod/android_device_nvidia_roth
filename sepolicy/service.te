@@ -12,32 +12,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# /dev/quadd
-type quadd_device, dev_type;
-
-# /dev/quadd_auth
-type quadd_auth_device, dev_type;
-
-# /dev/i2c*
-type i2c_device, dev_type;
-
-# /dev/hidraw[0-9]
-type hidraw_device, dev_type;
-
-# Tsec device
-type tsec_device, dev_type;
-
-# /dev/tegra-throughput
-type throughput_device, dev_type;
-
-# factory block device mounted on /mnt/factory.
-type factory_block_device, dev_type;
-
-# /dev/lightsensor
-type light_device, dev_type;
-
-# /dev/touch
-type touch_device, dev_type;
-
-# /dev/raydium_ts
-type raydium_device, dev_type;
+type raydium_touch_service, service_manager_type;

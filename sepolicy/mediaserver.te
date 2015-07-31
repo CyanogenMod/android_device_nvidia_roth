@@ -28,3 +28,6 @@ allow mediaserver sysfs_thermal:file { r_file_perms getattr };
 
 allow mediaserver radio_device:chr_file { read write open };
 allow mediaserver system_server:unix_stream_socket read;
+
+# Mediaserver are expected to be able to rw all sysfs files
+allow mediaserver sysfs_touch_calib:file rw_file_perms;
