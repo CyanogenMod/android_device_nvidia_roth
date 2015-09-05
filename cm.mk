@@ -7,8 +7,8 @@ $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=roth \
     TARGET_DEVICE=roth \
-    BUILD_FINGERPRINT="nvidia/thor/roth:4.4.2/KOT49H/eng.unjust.20150214.233911:userdebug/test-keys" \
-    PRIVATE_BUILD_DESC="thor-userdebug 4.4.2 KOT49H eng.unjust.20150214.233911 test-keys"
+    BUILD_FINGERPRINT="nvidia/thor/roth:5.1/LMY47N/01.00.32208_585.9399:user/release-keys" \
+    PRIVATE_BUILD_DESC="thor_gms-user 5.1 LMY47N 01.00.32208_585.9399 release-keys"
 
 PRODUCT_NAME := cm_roth
 PRODUCT_DEVICE := roth
