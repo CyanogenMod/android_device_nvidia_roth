@@ -113,11 +113,11 @@ Only the three quirks included above are recognized at this point:
              <Limit name="sample-rate" ranges="16000,22050,24000,32000,44100,48000" />
              <Limit name="bitrate" range="8000-384000" />
         </MediaCodec>
-        <MediaCodec name="OMX.Nvidia.eaacp.decoder" type="audio/mp4a-latm" >
+        <!--<MediaCodec name="OMX.Nvidia.eaacp.decoder" type="audio/mp4a-latm" >
              <Limit name="channel-count" max="6" />
              <Limit name="sample-rate" ranges="16000,22050,24000,32000,44100,48000" />
              <Limit name="bitrate" range="8000-384000" />
-        </MediaCodec>
+        </MediaCodec>-->
         <MediaCodec name="OMX.Nvidia.mjpeg.decoder" type="video/mjpeg" >
             <Limit name="block-size" value="16x16" />
             <Feature name="adaptive-playback" />
@@ -148,13 +148,13 @@ Only the three quirks included above are recognized at this point:
     </Decoders>
 
     <Encoders>
-        <MediaCodec name="OMX.Nvidia.h264.encoder" type="video/avc" >
+        <!--<MediaCodec name="OMX.Nvidia.h264.encoder" type="video/avc" >
             <Limit name="size" min="48x48" max="1980x1088" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
             <Limit name="blocks-per-second" min="1" max="783360" />
             <Limit name="bitrate" range="1-50000000" />
-        </MediaCodec>
+        </MediaCodec>-->
         <MediaCodec name="OMX.Nvidia.vp8.encoder" type="video/x-vnd.on2.vp8" >
             <Limit name="size" min="48x48" max="1980x1088" />
             <Limit name="alignment" value="2x2" />
