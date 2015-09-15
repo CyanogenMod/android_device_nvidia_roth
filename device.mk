@@ -131,3 +131,6 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bc
 
 # Wireless Controller
 $(call inherit-product-if-exists, vendor/nvidia/shield_common/blake-blobs.mk)
+
+# Console Mode
+$(call inherit-product-if-exists, vendor/nvidia/shield_common/consolemode-blobs.mk)
