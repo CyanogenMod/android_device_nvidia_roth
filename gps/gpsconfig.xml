@@ -2,36 +2,30 @@
 <glgps xmlns="http://www.glpals.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.glpals.com/ glconfig.xsd" >
 
 <hal
-    PortName="/dev/ttyHS1"
+    PortName="/dev/ttyTHS1"
     BaudRate="921600"
     LogEnabled="false"
-    LogDirectory="/data/gps/"
-    ltoFileName="lto.dat"
+    Log="FILE"
+    HttpSyncLto="true"
+    LtoSyncThresholdDays="1"
+    LogDirectory="/data/gps/log/"
+    LtoFileName="lto.dat"
+    LtoDir="/data/gps/"
     CtrlPipe="/data/gps/glgpsctrl"
     GpioNStdbyPath="/sys/class/gpio/gpio49/value"
-
-    SuplLogEnable="false"
-    SuplLogFullName="/data/gps/supllog.txt"
-    SuplEnable="true"
-    SuplMsbCapable="true"
-    SuplMsaCapable="true"
-    SuplEcidCapable="false"
-    SuplUseApn="false"
-    SuplServer="supl.google.com"
-    SuplPort="7275"
-    SuplMinorVersion="0"
-    SuplVersion="1"
-
-    SuplTlsEnable="false"
-    SuplTlsCertPath="/system/etc/gps/cacertqa1.pem"
+    SensorsEnable="false"
+    SensorsLog="false"
+    SensorsDebugLog="false"
+    SensorsMask="0x7F"
 
     LbsEnable="false"
+    AtCmdTransportSocketMode="Client"
 />
 
 <!-- GPS configuration with standalone 16.8 MHz TCXO  -->
 <gll
     LogPriMask="LOG_DEBUG"
-    LogFacMask="LOG_GLLAPI | LOG_NMEA | LOG_RAWDATA"
+    LogFacMask="LOG_DEFAULT"
     FrqPlan="FRQ_PLAN_26MHZ_2PPM"
     RfType="GL_RF_4752_BRCM"
 />

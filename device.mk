@@ -74,6 +74,7 @@ PRODUCT_COPY_FILES += \
 # GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/gpsconfig.xml:system/etc/gps/gpsconfig.xml
+    $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf
 
 # Idc
 PRODUCT_COPY_FILES += \
