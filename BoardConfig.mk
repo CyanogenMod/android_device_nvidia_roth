@@ -128,30 +128,3 @@ BOARD_SEPOLICY_UNION := \
         vold.te \
         zygote.te
 
-# TWRP
-TW_THEME := landscape_hdpi
-TW_THEME_LANDSCAPE := landscape_hdpi
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-RECOVERY_SDCARD_ON_DATA := true
-TW_EXCLUDE_MTP := true
-TW_EXCLUDE_SUPERSU := true
-BOARD_HAS_NO_REAL_SDCARD := true
-TW_NO_EXFAT := true
-TW_NO_EXFAT_FUSE := true
-# rotate display
-RECOVERY_TOUCHSCREEN_SWAP_XY := true
-RECOVERY_TOUCHSCREEN_FLIP_X := true
-TW_DEFAULT_ROTATION := 90
-
-# MultiROM
-MR_INPUT_TYPE := type_b
-MR_INIT_DEVICES := device/nvidia/roth/multirom/mr_init_devices.c
-MR_DPI := hdpi
-MR_FSTAB := device/nvidia/roth/multirom/twrp.fstab
-MR_KEXEC_MEM_MIN := 0x85000000
-MR_KEXEC_DTB := true
-MR_DEVICE_HOOKS := device/nvidia/roth/multirom/mr_hooks.c
-MR_DEVICE_HOOKS_VER := 3
-MR_PAD_UP := 308
-MR_PAD_DOWN := 305
-MR_PAD_CONFIRM := 304
