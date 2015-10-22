@@ -75,6 +75,9 @@ type sysfs_hid, fs_type, sysfs_type;
 # /sys/devices/virtual/misc/tegra-throughput/framecount
 type sysfs_throughput, fs_type, sysfs_type;
 
+# /sys/module/bcmdhd/parameters/firmware_path
+type sysfs_wifi, fs_type, sysfs_type;
+
 # /mnt/tmp/fc[0-9] files.
 type surfaceflinger_fc, file_type;
 

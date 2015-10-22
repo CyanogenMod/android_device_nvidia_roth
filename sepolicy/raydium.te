@@ -1,4 +1,5 @@
-# Copyright (c) 2014-2015, NVIDIA CORPORATION.  All rights reserved.
+
+# Copyright (c) 2014, NVIDIA CORPORATION.  All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,25 +21,17 @@ type raydium_exec, exec_type, file_type;
 init_daemon_domain(raydium)
 
 r_dir_file(raydium, factory_file);
+r_dir_file(raydium, user_calib_file);
 
 allow raydium graphics_device:chr_file r_file_perms;
 allow raydium graphics_device:dir search;
 allow raydium kmsg_device:chr_file { write getattr open };
 
 allow raydium touch_device:chr_file rw_file_perms;
-allow raydium raydium_device:chr_file rw_file_perms;
 allow raydium self:capability { net_admin sys_nice };
 allow raydium self:netlink_socket create_socket_perms;
 allow raydium self:netlink_kobject_uevent_socket create_socket_perms;
 allow raydium raydium_touch_service:service_manager add;
-allow raydium user_calib_file:dir create_dir_perms;
-allow raydium user_calib_file:file create_file_perms;
-allow raydium system_file:file x_file_perms;
-allow raydium shell_exec:file rx_file_perms;
-allow raydium system_data_file:dir create_dir_perms;
-allow raydium system_data_file:file { create setattr { { getattr open read ioctl lock } { open append write } } { getattr link unlink rename } };
-allow raydium unlabeled:dir search;
-allow raydium unlabeled:file r_file_perms;
 
 binder_use(raydium);
 binder_service(raydium);

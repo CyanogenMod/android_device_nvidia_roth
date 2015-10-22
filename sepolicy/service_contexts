@@ -19,9 +19,6 @@ powerservice		u:object_r:system_app_service:s0
 set_hwui_params		u:object_r:system_app_service:s0
 mediaserver		u:object_r:mediaserver_service:s0
 media.nvidia.audio_alsa u:object_r:mediaserver_service:s0
-tegraoverlaywidget      u:object_r:system_server_service:s0
-nvidia.inputservice         u:object_r:system_server_service:s0
-tegraoverlay            u:object_r:system_server_service:s0
 nvlogd					u:object_r:system_app_service:s0
 jscheck					u:object_r:system_app_service:s0
 raydium.ts_service	u:object_r:raydium_touch_service:s0

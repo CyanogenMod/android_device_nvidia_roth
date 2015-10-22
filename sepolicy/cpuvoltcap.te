@@ -20,8 +20,8 @@ init_daemon_domain(cpuvoltcap)
 
 allow cpuvoltcap self:netlink_socket create_socket_perms;
 
-allow cpuvoltcap system_data_file:dir create_dir_perms;
-allow cpuvoltcap system_data_file:file create_file_perms;
+#allow cpuvoltcap system_data_file:dir create_dir_perms;
+#allow cpuvoltcap system_data_file:file create_file_perms;
 allow cpuvoltcap system_data_file:fifo_file create_file_perms;
 
 # /sys/devices/virtual/thermal/...

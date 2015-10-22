@@ -13,21 +13,31 @@
 # limitations under the License.
 
 # Camera data files
-allow mediaserver nv_camera_data_file:dir { write search setattr create add_name };
+allow mediaserver nv_camera_data_file:dir create_dir_perms;
 allow mediaserver nv_camera_data_file:file create_file_perms;
 
-allow mediaserver self:netlink_kobject_uevent_socket create;
-allow mediaserver self:netlink_kobject_uevent_socket { read bind setopt };
+# Mediaserver searches through sysfs, so we need to allow it to search all dirs we retag
+r_dir_file(mediaserver, sysfs_thermal);
 
-allow mediaserver system_data_file:file { open write read getattr };
-allow mediaserver system_data_file:dir r_dir_perms;
-allow mediaserver system_app_data_file:dir r_dir_perms;
+# Allow mediaserver read and write access to system_server
+# It needs to access the sensors as video stabilization uses
+# the sensor data
+allow mediaserver system_server:unix_stream_socket { read write };
 
-allow mediaserver sysfs_thermal:dir r_dir_perms;
-allow mediaserver sysfs_thermal:file { r_file_perms getattr };
+# Perform binder IPC to system_server
+binder_call(mediaserver, system_server)
+binder_use(mediaserver)
 
-allow mediaserver radio_device:chr_file { read write open };
-allow mediaserver system_server:unix_stream_socket read;
+r_dir_file(mediaserver, factory_file)
+
+allow_use_phs(mediaserver)
 
 # Mediaserver are expected to be able to rw all sysfs files
 allow mediaserver sysfs_touch_calib:file rw_file_perms;
+
+#
+# media server - modem audio HAL
+#
+
+# AT channel ports (ACM, SHM...)
+allow mediaserver radio_device:chr_file rw_file_perms;

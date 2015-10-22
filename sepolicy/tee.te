@@ -13,5 +13,3 @@
 # limitations under the License.
 
 allow tee tee_data_file:dir create_dir_perms;
-allow tee system_data_file:dir { write add_name};
-allow tee system_data_file:file { create write open };

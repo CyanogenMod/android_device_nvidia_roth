@@ -1,4 +1,4 @@
-# Copyright (c) 2015, NVIDIA CORPORATION.  All rights reserved.
+# Copyright (c) 2014, NVIDIA CORPORATION.  All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,16 +11,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-# BT sysfs permissions /sys/class/rfkill/rfkill0/state
-allow bluetooth sysfs:file write;
-#fix: allow bluetooth proc:file write;
-allow bluetooth unlabeled:dir search;
-
-allow wpa init:unix_dgram_socket { read write sendto };
-
-# allow wpa_supplicant to access symlinks created by wifi_loader
-allow wpa wifi_data_file:lnk_file { getattr read write };
 
 # wifi_loader - wifi loader which modifies /data/misc/wifi/*
 type wifi_loader, domain;
@@ -46,14 +36,12 @@ allow wifi_loader kernel:system module_request;
 allow wifi_loader self:capability { net_admin dac_override chown sys_module fowner fsetid };
 allow wifi_loader system_prop:property_service set;
 allow wifi_loader property_socket:sock_file write;
-allow wifi_loader sysfs:file read;
-allow wifi_loader system_file:file { execute_no_trans };
+allow wifi_loader sysfs_wifi:file r_file_perms;
+allow wifi_loader system_file:file execute_no_trans;
 allow wifi_loader proc_wmem_default_writable:file w_file_perms;
 allow wifi_loader proc_wmem_max_writable:file w_file_perms;
-allow wifi_loader default_prop:property_service set;
+
+# Allow wifi_loader/bluetooth to read a custom MAC address from /mnt/factory/<wifi|bluetooth>
+r_dir_file(wifi_loader, factory_file)
 
 type_transition wifi_loader wifi_data_file:sock_file wpa_socket;
-
-allow wpa devpts:chr_file {read write getattr };
-allow wpa sockfs:unix_dgram_socket { read write };
-

@@ -12,14 +12,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-type powerserv, domain;
-type powerserv_exec, exec_type, file_type;
-
-init_daemon_domain(powerserv)
-unix_socket_connect(powerserv, property, init)
-
-#allow powerserv default_prop:property_service set;
-allow powerserv servicemanager:binder { call transfer };
-allow powerserv system_app_service:service_manager add;
-allow servicemanager powerserv:process getattr;
-allow powerserv system_server:binder call;
+# Allow bluetooth to read a custom MAC address from /mnt/factory/<bluetooth>
+r_dir_file(bluetooth, factory_file)
