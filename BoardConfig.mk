@@ -42,6 +42,7 @@ BOARD_USES_ALSA_AUDIO := true
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/nvidia/roth
 TARGET_KERNEL_CONFIG := cyanogenmod_roth_defconfig
+BOARD_KERNEL_CMDLINE := androidboot.hardware=roth
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -92,48 +93,6 @@ BOARD_HARDWARE_CLASS := device/nvidia/roth/cmhw/
 MALLOC_IMPL := dlmalloc
 
 BOARD_SEPOLICY_DIRS := device/nvidia/roth/sepolicy/
-BOARD_SEPOLICY_UNION := \
-        bootanim.te \
-        btmacwriter.te \
-        comms.te \
-        cpuvoltcap.te \
-        device.te \
-        domain.te \
-        drmserver.te \
-        file_contexts \
-        file.te \
-        genfs_contexts \
-        gpsd.te \
-        init.te \
-        installd.te \
-        jscheck.te \
-        mediaserver.te \
-        netd.te \
-        nvlogd.te \
-        platform_app.te \
-        powerserv.te \
-        property_contexts \
-        property.te \
-        raydium.te \
-        recovery.te \
-        sdcardd.te \
-        service.te \
-        servicemanager.te \
-        service_contexts \
-        set_hwui.te \
-        setup_fs.te \
-        shell.te \
-        surfaceflinger.te \
-        system_app.te \
-        system_server.te \
-        te_macros \
-        tee.te \
-        touch.te \
-        ueventd.te \
-        untrusted_app.te \
-        wl18xx.te \
-        vold.te \
-        zygote.te
 
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := libinit_roth

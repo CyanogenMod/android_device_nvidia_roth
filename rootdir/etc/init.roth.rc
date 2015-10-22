@@ -15,21 +15,12 @@ on early-init
     mount debugfs debugfs /sys/kernel/debug
 
 on init
-    mkdir /mnt/shell/emulated 0700 shell shell
-    mkdir /storage/emulated 0555 root root
     mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
     mkdir /storage/sdcard1 0700 root root
 
-    export SECONDARY_STORAGE /storage/sdcard1
-    export EXTERNAL_STORAGE /storage/emulated/legacy
-    export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
-    export EMULATED_STORAGE_TARGET /storage/emulated
-
     # Support legacy paths
-    symlink /storage/emulated/legacy /sdcard
-    symlink /storage/emulated/legacy /mnt/sdcard
-    symlink /storage/emulated/legacy /storage/sdcard0
-    symlink /mnt/shell/emulated/0 /storage/emulated/legacy
+    symlink /sdcard /mnt/sdcard
+    symlink /sdcard /storage/sdcard0
 
     # create directory for mounting usb drives
     mkdir /mnt/media_rw/usbdrive 0700 media_rw media_rw
@@ -49,7 +40,6 @@ on fs
     setprop ro.gpsstatus.changed true
     setprop ro.crypto.tmpfs_options size=128m,mode=0771,uid=1000,gid=1000
     setprop ro.crypto.umount_sd false
-    setprop ro.crypto.fuse_sdcard true
     mount_all /fstab.roth
 
 on post-fs-data
@@ -58,8 +48,6 @@ on post-fs-data
     mkdir /data/mpu 0755 system system
 
     mkdir /data/misc/wminput 0776 system system
-
-    mkdir /data/media 0770 media_rw media_rw
 
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
@@ -328,9 +316,6 @@ service cpuvoltcap /system/bin/nvcpuvoltcapd -a
     class main
     user system
     group system
-
-service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
-    class late_start
 
 service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
     class late_start
