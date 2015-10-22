@@ -27,8 +27,8 @@ $(call inherit-product-if-exists, vendor/nvidia/roth/roth-vendor.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    device/nvidia/roth/overlay \
-    device/nvidia/roth/shield_strings/overlay
+    device/nvidia/roth/overlay
+#    device/nvidia/roth/shield_strings/overlay
 
 # Ramdisk
 PRODUCT_PACKAGES += \
