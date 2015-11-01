@@ -63,6 +63,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/nvaudio_conf.xml:system/etc/nvaudio_conf.xml
 
 PRODUCT_PACKAGES += \
+    tinyalsa \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default
