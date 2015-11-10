@@ -1,0 +1,6 @@
+[
+ {
+   "repository": "android_kernel_nvidia_roth",
+   "target_path": "kernel/nvidia/roth"
+ }
+]
