@@ -109,6 +109,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/com.nvidia.nvsi.xml:system/etc/permissions/com.nvidia.nvsi.xml \
     $(LOCAL_PATH)/permissions/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
 
+PRODUCT_PACKAGES += power.tegra
+
 # Wifi
 PRODUCT_PACKAGES += \
     hostapd \
