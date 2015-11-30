@@ -38,6 +38,8 @@ TARGET_NO_RADIOIMAGE := true
 # Audio
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_ALSA_AUDIO := true
+# Remove if/when M libs are released
+TARGET_TINY_ALSA_IGNORE_SILENCE_SIZE := true
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/nvidia/roth
