@@ -128,6 +128,8 @@ PRODUCT_PACKAGES += \
     setup_fs
 
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wifi/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
 
 # Wireless Controller
 $(call inherit-product-if-exists, vendor/nvidia/shield_common/blake-blobs.mk)
