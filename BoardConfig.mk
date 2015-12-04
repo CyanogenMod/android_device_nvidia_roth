@@ -135,3 +135,7 @@ BOARD_SEPOLICY_UNION := \
         vold.te \
         zygote.te
 
+# Vendor Init
+TARGET_INIT_VENDOR_LIB := libinit_roth
+TARGET_LIBINIT_DEFINES_FILE := device/nvidia/roth/init/init_roth.c
+
