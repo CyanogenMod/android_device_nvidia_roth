@@ -30,6 +30,7 @@
 
 #include "init.h"
 #include "vendor_init.h"
+#include "log.h"
 #include "util.h"
 #include <string.h>
 
