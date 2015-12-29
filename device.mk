@@ -135,4 +135,4 @@ PRODUCT_COPY_FILES += \
 #$(call inherit-product-if-exists, vendor/nvidia/shield_common/blake-blobs.mk)
 
 # Console Mode
-#$(call inherit-product-if-exists, vendor/nvidia/shield_common/consolemode-blobs.mk)
+$(call inherit-product-if-exists, vendor/nvidia/shield_common/consolemode-blobs.mk)
