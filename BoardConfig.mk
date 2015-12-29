@@ -99,5 +99,5 @@ BOARD_SEPOLICY_DIRS := device/nvidia/roth/sepolicy/
 
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := libinit_roth
-TARGET_LIBINIT_DEFINES_FILE := device/nvidia/roth/init/init_roth.c
+TARGET_LIBINIT_DEFINES_FILE := device/nvidia/roth/init/init_roth.cpp
 
