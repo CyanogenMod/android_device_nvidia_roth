@@ -50,6 +50,7 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=roth androidboot.selinux=permissive
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/nvidia/roth/bluetooth
+BCM_BLUETOOTH_MANTA_BUG := true
 
 # Graphics
 USE_OPENGL_RENDERER := true
