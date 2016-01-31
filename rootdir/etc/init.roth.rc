@@ -348,7 +348,7 @@ on property:init.svc.hciattach=stopped
 import init.tf.rc
 
 #Raydium touch setting
-service rm_ts_service    /system/bin/rm_ts_server
+service rm_ts_service    /vendor/bin/rm_ts_server
     class main
     user system
     group system input
