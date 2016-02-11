@@ -57,6 +57,8 @@ on post-fs-data
     chown gps system /data/gps/
     chmod 0770 /data/gps/
 
+    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/FCT /mnt/factory ro context=u:object_r:factory_file:s0
+
 on boot
 
 # bluetooth

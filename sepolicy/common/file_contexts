@@ -100,6 +100,7 @@
 /dev/socket/charon_status		u:object_r:charon_socket:s0
 # touch
 /dev/touch				u:object_r:touch_device:s0
+/dev/raydium_ts				u:object_r:touch_device:s0
 # zram
 /dev/block/zram0			u:object_r:swap_block_device:s0
 # /dev/cy8c-led-boot devices
