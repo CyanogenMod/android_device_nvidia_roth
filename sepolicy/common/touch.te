@@ -35,5 +35,5 @@ init_daemon_domain(input-cfboost)
 
 allow input-cfboost shell_exec:file read;
 allow input-cfboost system_file:file execute_no_trans;
-allow input-cfboost sysfs_input-cfboost:file rw_file_perms;
-allow input-cfboost sysfs_input-cfboost:dir search;
+allow input-cfboost sysfs_cfboost:file rw_file_perms;
+allow input-cfboost sysfs_cfboost:dir search;

@@ -97,7 +97,8 @@ BOARD_HARDWARE_CLASS := device/nvidia/roth/cmhw/
 MALLOC_IMPL := dlmalloc
 
 BOARD_SEPOLICY_DIRS := device/nvidia/roth/sepolicy/common \
-                       device/nvidia/roth/sepolicy/raydium
+                       device/nvidia/roth/sepolicy/raydium \
+                       device/nvidia/roth/sepolicy/product
 
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := libinit_roth

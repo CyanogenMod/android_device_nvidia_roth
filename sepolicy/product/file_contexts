@@ -1,0 +1,7 @@
+/data/device_config.txt                   u:object_r:cvc_data_file:s0
+/data/vc_log.txt                   u:object_r:cvc_data_file:s0
+
+/system/bin/js_daemon.sh              u:object_r:jscheck_exec:s0
+
+/system/bin/input_cfboost_init.sh    u:object_r:input-cfboost_exec:s0
+/sys/module/input_cfboost/parameters(/.*)?   u:object_r:sysfs_cfboost:s0

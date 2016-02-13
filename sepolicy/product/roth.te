@@ -1,0 +1,11 @@
+allow cvc sysfs_thermal:file r_file_perms;
+allow cvc sysfs_thermal:dir r_dir_perms;
+allow cvc sysfs_tegra_rail_stats:file r_file_perms;
+
+allow ueventd sysfs_nvi2c:{ file lnk_file } rw_file_perms;
+allow ueventd sysfs_soc:{ file lnk_file } rw_file_perms;
+
+allow system_server sysfs_pwm_fan:file rw_file_perms;
+allow system_server sysfs_smartdimmer:file rw_file_perms;
+
+allow input-cfboost sysfs_cfboost:file getattr;

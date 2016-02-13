@@ -250,6 +250,7 @@
 /sys/devices/platform/gamepad_reset(.*)/gamepad_reset       u:object_r:sysfs_gamepad:s0
 # touch slowscan sysfs
 /sys/devices/virtual/misc/touch/slowscan_enable			u:object_r:sysfs_slowscan:s0
+/sys/devices/virtual/misc/raydium_ts/slowscan_enable			u:object_r:sysfs_slowscan:s0
 # Touch sysfs for touch service
 /sys/devices/virtual/misc/touch/log	u:object_r:sysfs_touch_log:s0
 # TCP Window Divisor
