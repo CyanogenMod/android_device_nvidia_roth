@@ -44,7 +44,7 @@ TARGET_TINY_ALSA_IGNORE_SILENCE_SIZE := true
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/nvidia/roth
 TARGET_KERNEL_CONFIG := cyanogenmod_roth_defconfig
-BOARD_KERNEL_CMDLINE := androidboot.hardware=roth androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := androidboot.hardware=roth
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
