@@ -24,7 +24,7 @@
 
 # Raydium Touch
 /dev/raydium_ts						u:object_r:touch_device:s0
-/sys/devices/virtual/misc/raydium_ts/self_test		u:object_r:sysfs_touch_calib:s0v
+/sys/devices/virtual/misc/raydium_ts/self_test		u:object_r:sysfs_touch_calib:s0
 /sys/devices/virtual/misc/raydium_ts/slowscan_enable	u:object_r:sysfs_slowscan:s0
 
 # Graphics
