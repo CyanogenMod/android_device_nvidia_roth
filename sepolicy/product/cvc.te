@@ -13,7 +13,8 @@
 # limitations under the License.
 #
 # Derived from file(s)
-# Copyright (c) 2014-2015, NVIDIA CORPORATION.  All rights reserved.
+# Copyright (c) 2014, NVIDIA CORPORATION.  All rights reserved.
 
-# Joystick keep-alive
-jscheck                                     u:object_r:system_app_service:s0
+allow cvc sysfs_thermal:file r_file_perms;
+allow cvc sysfs_thermal:dir r_dir_perms;
+allow cvc sysfs_tegra_rail_stats:file r_file_perms;

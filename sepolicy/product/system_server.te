@@ -15,5 +15,5 @@
 # Derived from file(s)
 # Copyright (c) 2014-2015, NVIDIA CORPORATION.  All rights reserved.
 
-# Joystick keep-alive
-jscheck                                     u:object_r:system_app_service:s0
+allow system_server sysfs_pwm_fan:file rw_file_perms;
+allow system_server sysfs_smartdimmer:file rw_file_perms;

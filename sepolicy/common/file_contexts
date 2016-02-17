@@ -26,9 +26,6 @@
 /dev/nvhost-vic				u:object_r:gpu_device:s0
 /dev/nvmap				u:object_r:gpu_device:s0
 /dev/nvhdcp0				u:object_r:gpu_device:s0
-/dev/nvhost-gr2d			u:object_r:gpu_device:s0
-/dev/nvhost-gr3d			u:object_r:gpu_device:s0
-/dev/knvmap				u:object_r:gpu_device:s0
 # camera devices
 /dev/camera.pcl				u:object_r:camera_device:s0
 /dev/nvhost-ctrl-vi.*			u:object_r:camera_device:s0
@@ -100,7 +97,6 @@
 /dev/socket/charon_status		u:object_r:charon_socket:s0
 # touch
 /dev/touch				u:object_r:touch_device:s0
-/dev/raydium_ts				u:object_r:touch_device:s0
 # zram
 /dev/block/zram0			u:object_r:swap_block_device:s0
 # /dev/cy8c-led-boot devices
@@ -242,7 +238,6 @@
 /sys/devices/platform/[0-9a-f]+\.i2c(/.*)?	u:object_r:sysfs_nvi2c:s0
 # cvc sysfs
 /sys/kernel/tegra_volt_cap(/.*)?		u:object_r:sysfs_cvc:s0
-/sys/kernel/tegra_cpu_volt_cap(/.*)?            u:object_r:sysfs_cvc:s0
 # Blake touchpad setting
 /sys/devices/platform/ozwpan/.*/mode            u:object_r:sysfs_blake:s0
 /sys/devices/platform/tegra-xhci/.*/mode	u:object_r:sysfs_blake:s0
@@ -250,7 +245,6 @@
 /sys/devices/platform/gamepad_reset(.*)/gamepad_reset       u:object_r:sysfs_gamepad:s0
 # touch slowscan sysfs
 /sys/devices/virtual/misc/touch/slowscan_enable			u:object_r:sysfs_slowscan:s0
-/sys/devices/virtual/misc/raydium_ts/slowscan_enable			u:object_r:sysfs_slowscan:s0
 # Touch sysfs for touch service
 /sys/devices/virtual/misc/touch/log	u:object_r:sysfs_touch_log:s0
 # TCP Window Divisor
@@ -260,7 +254,7 @@
 # SurfaceFlinger to PHS pagefiles
 /mnt/tmp/fc[0-9]			u:object_r:surfaceflinger_fc:s0
 # user calibration
-/mnt/usercalib(/.*)?			u:object_r:user_calib_file:s0
+/usercalib(/.*)?			u:object_r:user_calib_file:s0
 # wifi config
 /factory/wifi_config(/.*)?		u:object_r:factoryconfig_file:s0
 
@@ -269,15 +263,3 @@
 
 # Variable refresh rate sysfs
 /sys/devices/platform/host1x/tegradc.[0-1]/vrr(/.*)    u:object_r:sysfs_vrr:s0
-
-# tfa9887
-/sys/kernel/tfa9887/config			u:object_r:sysfs_tfa9887:s0
-
-# cpuvoltcap
-/system/bin/nvcpuvoltcapd			u:object_r:cvc_exec:s0
-
-# for cpuvoltcap using path
-/sys/power/tegra_rail_stats			u:object_r:sysfs_tegra_rail_stats:s0
-
-# led brightness
-/sys/devices/platform/leds_pwm/leds/roth-led/brightness	u:object_r:sysfs_led:s0

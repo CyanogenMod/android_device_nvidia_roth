@@ -36,7 +36,5 @@ allow raydium user_calib_file:file create_file_perms;
 allow raydium system_file:file x_file_perms;
 allow raydium shell_exec:file rx_file_perms;
 
-allow raydium kernel:system module_request;
-
 binder_use(raydium);
 binder_service(raydium);

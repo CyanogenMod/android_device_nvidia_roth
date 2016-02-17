@@ -25,8 +25,6 @@ allow init kernel:system module_request;
 
 allow init self:capability sys_nice;
 
-allow init sysfs_tfa9887:file relabelto;
-
 # For init to write to kmsg
 userdebug_or_eng(`
 allow init kmsg_device:chr_file write;

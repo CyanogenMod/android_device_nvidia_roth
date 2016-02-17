@@ -1,7 +1,49 @@
-/data/device_config.txt                   u:object_r:cvc_data_file:s0
-/data/vc_log.txt                   u:object_r:cvc_data_file:s0
+# Copyright (C) 2016 The CyanogenMod Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# Derived from file(s)
+# Copyright (c) 2014-2015, NVIDIA CORPORATION.  All rights reserved.
 
-/system/bin/js_daemon.sh              u:object_r:jscheck_exec:s0
+# Joystick keep-alive
+/system/bin/js_daemon.sh	u:object_r:jscheck_exec:s0
 
-/system/bin/input_cfboost_init.sh    u:object_r:input-cfboost_exec:s0
-/sys/module/input_cfboost/parameters(/.*)?   u:object_r:sysfs_cfboost:s0
+# CPU Boost on Input
+/system/bin/input_cfboost_init.sh		u:object_r:input-cfboost_exec:s0
+/sys/module/input_cfboost/parameters(/.*)?	u:object_r:sysfs_cfboost:s0
+
+# Raydium Touch
+/dev/raydium_ts						u:object_r:touch_device:s0
+/sys/devices/virtual/misc/raydium_ts/self_test		u:object_r:sysfs_touch_calib:s0v
+/sys/devices/virtual/misc/raydium_ts/slowscan_enable	u:object_r:sysfs_slowscan:s0
+
+# Graphics
+/dev/nvhost-gr2d	u:object_r:gpu_device:s0
+/dev/nvhost-gr3d	u:object_r:gpu_device:s0
+/dev/knvmap		u:object_r:gpu_device:s0
+
+# Calibration data
+/mnt/usercalib(/.*)?	u:object_r:user_calib_file:s0
+
+# tfa9887
+/sys/kernel/tfa9887/config	u:object_r:sysfs_tfa9887:s0
+
+# cpuvoltcap
+/system/bin/nvcpuvoltcapd		u:object_r:cvc_exec:s0
+/sys/kernel/tegra_cpu_volt_cap(/.*)?	u:object_r:sysfs_cvc:s0
+/sys/power/tegra_rail_stats		u:object_r:sysfs_tegra_rail_stats:s0
+/data/device_config.txt			u:object_r:cvc_data_file:s0
+/data/vc_log.txt			u:object_r:cvc_data_file:s0
+
+# led brightness
+/sys/devices/platform/leds_pwm/leds/roth-led/brightness	u:object_r:sysfs_led:s0

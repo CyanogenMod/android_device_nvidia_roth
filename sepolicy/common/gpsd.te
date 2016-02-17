@@ -40,5 +40,3 @@ set_prop(gpsd, ctl_default_prop);
 # Perform binder IPC to system_server
 binder_call(gpsd, system_server);
 binder_use(gpsd);
-
-allow gpsd kernel:system module_request;

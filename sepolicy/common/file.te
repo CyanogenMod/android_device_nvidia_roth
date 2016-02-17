@@ -146,12 +146,3 @@ type sysfs_touch_log, fs_type, sysfs_type;
 
 # Filesystem type CIFS
 type cifs, sdcard_type, fs_type, mlstrustedobject;
-
-# /sys/kernel/tfa9887/config
-type sysfs_tfa9887, fs_type, sysfs_type;
-
-# sys/power/tegra_rail_stats, /sys/kernel/tegra_cpu_volt_cap(/.*)?
-type sysfs_tegra_rail_stats, fs_type, sysfs_type;
-
-# /sys/devices/platform/leds_pwm/leds/roth-led/brightness
-type sysfs_led, fs_type, sysfs_type;

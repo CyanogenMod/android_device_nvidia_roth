@@ -15,5 +15,8 @@
 # Derived from file(s)
 # Copyright (c) 2014-2015, NVIDIA CORPORATION.  All rights reserved.
 
-# Joystick keep-alive
-jscheck                                     u:object_r:system_app_service:s0
+# tfa9887 control
+allow system_app sysfs_tfa9887:file rw_file_perms;
+
+# Led Brightness
+allow system_app sysfs_led:file { open write getattr };

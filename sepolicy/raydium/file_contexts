@@ -22,6 +22,4 @@
 /sys/devices/virtual/misc/touch/selftest_spi_byte_write		u:object_r:sysfs_touch_calib:s0
 /sys/devices/virtual/misc/touch/self_test			u:object_r:sysfs_touch_calib:s0
 
-/sys/devices/virtual/misc/raydium_ts/self_test			u:object_r:sysfs_touch_calib:s0
-
 (/system)?/vendor/bin/rm_ts_server				u:object_r:raydium_exec:s0
