@@ -50,3 +50,6 @@
 /dev/ttyTHS0                            u:object_r:gps_device:s0
 /dev/ttyTHS1                            u:object_r:gps_device:s0
 /dev/ttyHS1                             u:object_r:gps_device:s0
+
+# Trusted Foundations
+/data/tf(/.*)?                          u:object_r:tee_data_file:s0
