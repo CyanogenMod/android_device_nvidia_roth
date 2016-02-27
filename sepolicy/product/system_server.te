@@ -17,3 +17,4 @@
 
 allow system_server sysfs_pwm_fan:file rw_file_perms;
 allow system_server sysfs_smartdimmer:file rw_file_perms;
+allow system_server throughput_device:chr_file { open read write ioctl };

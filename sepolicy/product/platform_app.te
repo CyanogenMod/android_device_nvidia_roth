@@ -15,10 +15,4 @@
 # Derived from file(s)
 # Copyright (c) 2014-2015, NVIDIA CORPORATION.  All rights reserved.
 
-# tfa9887 control
-allow system_app sysfs_tfa9887:file rw_file_perms;
-
-# Led Brightness
-allow system_app sysfs_led:file { open write getattr };
-
-allow system_app throughput_device:chr_file { open read write ioctl };
+allow platform_app throughput_device:chr_file { open read write ioctl };

@@ -53,3 +53,6 @@
 
 # Trusted Foundations
 /data/tf(/.*)?                          u:object_r:tee_data_file:s0
+
+# Throughput
+/dev/tegra-throughput                   u:object_r:throughput_device:s0
