@@ -38,12 +38,15 @@
 # tfa9887
 /sys/kernel/tfa9887/config	u:object_r:sysfs_tfa9887:s0
 
-# cpuvoltcap
-/system/bin/nvcpuvoltcapd		u:object_r:cvc_exec:s0
-/sys/kernel/tegra_cpu_volt_cap(/.*)?	u:object_r:sysfs_cvc:s0
-/sys/power/tegra_rail_stats		u:object_r:sysfs_tegra_rail_stats:s0
-/data/device_config.txt			u:object_r:cvc_data_file:s0
-/data/vc_log.txt			u:object_r:cvc_data_file:s0
-
 # led brightness
 /sys/devices/platform/leds_pwm/leds/roth-led/brightness	u:object_r:sysfs_led:s0
+
+# enable UART port permission
+/dev/ttyTHS2                            u:object_r:hci_attach_dev:s0
+/dev/ttyHS2                             u:object_r:hci_attach_dev:s0
+/dev/ttyTHS3                            u:object_r:hci_attach_dev:s0
+
+# gps
+/dev/ttyTHS0                            u:object_r:gps_device:s0
+/dev/ttyTHS1                            u:object_r:gps_device:s0
+/dev/ttyHS1                             u:object_r:gps_device:s0
