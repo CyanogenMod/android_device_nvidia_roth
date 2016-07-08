@@ -85,12 +85,13 @@
       </device>
       <device name="speaker">
         <path name="on">
-          <ctl name="tfa9887 powerdown" val="0"/>
+          <!--ctl name="tfa9887 powerdown" val="0"/-->
+          <ctl name="Int Spk Switch" val="0"/>
           <ctl name="Int Spk Switch" val="1"/>
         </path>
         <path name="off">
           <ctl name="Int Spk Switch" val="0"/>
-          <ctl name="tfa9887 powerdown" val="1"/>
+          <!--ctl name="tfa9887 powerdown" val="1"/-->
         </path>
       </device>
     </playback>
