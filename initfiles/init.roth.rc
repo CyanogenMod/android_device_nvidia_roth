@@ -1,0 +1,118 @@
+#Copyright (c) 2011-2014 NVIDIA Corporation.  All Rights Reserved.
+#
+#NVIDIA Corporation and its licensors retain all intellectual property and
+#proprietary rights in and to this software and related documentation.  Any
+#use, reproduction, disclosure or distribution of this software and related
+#documentation without an express license agreement from NVIDIA Corporation
+#is strictly prohibited.
+
+import init.tegra.rc
+import init.roth_common.rc
+import init.t114.rc
+import init.cal.rc
+import init.ray_touch.rc
+
+on fs
+    setprop ro.gpsstatus.changed true
+
+on post-fs-data
+    write /sys/class/gpio/export 49
+    write /sys/class/gpio/gpio49/direction out
+    write /sys/class/gpio/gpio49/value 0
+    chown root system /sys/class/gpio/gpio49/value
+    chmod 0664 /sys/class/gpio/gpio49/value
+    chmod 0644 /sys/kernel/cluster/active
+    start start-gps
+
+    # create directory for runtime calibration data
+    mkdir /data/touchscreen 0755 system system
+    mkdir /data/mpu 0755 system system
+
+    mkdir /data/misc/wminput 0776 system system
+
+    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/FCT /mnt/factory ro context=u:object_r:factory_file:s0
+
+on boot
+
+# Center LED
+    chown system system /sys/class/leds/roth-led/brightness
+    chown system system /sys/class/leds/roth-led/trigger
+    chown system system /sys/class/leds/roth-led/enable
+
+# audio
+    chown media system /sys/kernel/tfa9887/config
+    chown media system /sys/kernel/tfa9887/cal
+    chown media system /sys/kernel/tfa9887/vol
+
+# Sensor
+    chown system system /sys/class/invensense/mpu/accl_enable
+    chown system system /sys/class/invensense/mpu/accl_fifo_enable
+    chown system system /sys/class/invensense/mpu/accl_delay
+    chown system system /sys/class/invensense/mpu/accl_max_range
+    chown system system /sys/class/invensense/mpu/enable
+    chown system system /sys/class/invensense/mpu/gyro_enable
+    chown system system /sys/class/invensense/mpu/gyro_fifo_enable
+    chown system system /sys/class/invensense/mpu/gyro_delay
+    chown system system /sys/class/invensense/mpu/gyro_max_range
+    chown system system /sys/class/invensense/mpu/lpa_delay
+    chown system system /sys/class/invensense/mpu/motion_enable
+    chown system system /sys/class/invensense/mpu/motion_threshold
+    chown system system /sys/class/invensense/mpu/power_state
+    chown system system /sys/class/invensense/mpu/key
+
+# Cpu maximum voltage control settings
+    chown system system /sys/kernel/tegra_cpu_volt_cap/volt
+    chown system system /sys/kernel/tegra_cpu_volt_cap/capping_state
+
+# Voltage monitor settings
+    chown system system /sys/power/tegra_rail_stats
+
+# Temperature monitor settings
+    chown system system /sys/class/thermal
+
+# for overlay monitor
+	chown system system /sys/class/i2c-dev/i2c-1/device/1-0040/power1_input_0
+	chown system system /sys/class/i2c-dev/i2c-1/device/1-0040/power1_input_1
+	chown system system /sys/class/i2c-dev/i2c-1/device/1-0040/power1_input_2
+	chown system system /sys/class/i2c-dev/i2c-0/device/0-004c/temperature
+	chown system system /sys/kernel/debug/tegra_fan/cur_pwm
+
+# Set Joystick
+    chown system system /sys/bus/usb/devices/1-1/power/control
+    chown system system /sys/devices/platform/issp.0/issp_usbreset
+    chown system system /sys/devices/platform/issp.0/issp_reset
+    #write /sys/bus/usb/devices/1-1/power/control auto
+    #write /sys/bus/usb/devices/1-1/power/wakeup enabled
+
+# for stat service
+	chown system system /dev/input/event2
+	chown system system /dev/input/event3
+	chown system system /dev/input/js0
+
+on property:sys.boot_completed=1
+    write /sys/class/tty/ttyS0/console_write_enable 0
+
+# CPU Boost: boost CPU on input events
+service input-cfboost /system/bin/input_cfboost_init.sh
+    class main
+    user root
+    group root
+    oneshot
+
+service jscheck /system/bin/js_daemon.sh
+    class main
+    user system
+    group system
+
+# Enable/disable CMU according to the colorspace
+on property:persist.sys.dpy0.colorspace=srgb
+    write /sys/class/graphics/fb0/device/cmu_enable 1
+
+on property:persist.sys.dpy0.colorspace=native
+    write /sys/class/graphics/fb0/device/cmu_enable 0
+
+on property:persist.sys.dpy1.colorspace=srgb
+    write /sys/class/graphics/fb1/device/cmu_enable 1
+
+on property:persist.sys.dpy1.colorspace=native
+    write /sys/class/graphics/fb1/device/cmu_enable 0

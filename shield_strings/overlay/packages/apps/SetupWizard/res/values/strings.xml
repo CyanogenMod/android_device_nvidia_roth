@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="sim_missing_summary" product="shield">A SIM card has not been detected in your SHIELD. To insert a SIM card, read the instructions that came with your device.</string>
-    <string name="location_gps" product="shield"><b>Improve location accuracy</b> by allowing apps to use the GPS on your SHIELD.</string>
-    <string name="services_explanation" product="shield">These services work for you to extend the capabilities of your SHIELD. You can turn them off at anytime. Data will be used in accordance with Cyanogen\'s <xliff:g id="name" example="Privacy Policy">%s</xliff:g>.</string>
-</resources>

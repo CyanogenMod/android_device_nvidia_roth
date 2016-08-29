@@ -17,6 +17,8 @@
 # This variable is set first, so it can be overridden
 # by BoardConfigVendor.mk
 
+-include device/nvidia/shield-common/BoardConfigCommon.mk
+
 TARGET_SPECIFIC_HEADER_PATH := device/nvidia/roth/include
 
 # Architecture
@@ -49,7 +51,7 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=roth
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/nvidia/roth/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/nvidia/roth/comms
 BCM_BLUETOOTH_MANTA_BUG := true
 
 # Graphics
@@ -74,7 +76,7 @@ TARGET_POWERHAL_VARIANT := tegra
 
 # Recovery
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-TARGET_RECOVERY_FSTAB := device/nvidia/roth/rootdir/etc/fstab.roth
+TARGET_RECOVERY_FSTAB := device/nvidia/roth/initfiles/fstab.roth
 BOARD_CUSTOM_BOOTIMG_MK := device/nvidia/roth/shbootimg.mk
 
 # Wifi related defines
@@ -94,9 +96,7 @@ BOARD_HARDWARE_CLASS := device/nvidia/roth/cmhw/
 
 MALLOC_IMPL := dlmalloc
 
-BOARD_SEPOLICY_DIRS := device/nvidia/roth/sepolicy/common \
-                       device/nvidia/roth/sepolicy/raydium \
-                       device/nvidia/roth/sepolicy/product
+BOARD_SEPOLICY_DIRS += device/nvidia/roth/sepolicy
 
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := libinit_roth
