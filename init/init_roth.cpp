@@ -32,22 +32,23 @@
 #include "vendor_init.h"
 #include "log.h"
 #include "util.h"
+#include "service.h"
 #include <string.h>
 
-int vendor_handle_control_message(const char *msg, const char *arg)
+int vendor_handle_control_message(const std::string &msg, const std::string &arg)
 {
-    struct service *sf_svc = NULL;
-    struct service *zg_svc = NULL;
+    Service *sf_svc = NULL;
+    Service *zg_svc = NULL;
 
-    if (!strcmp(msg,"restart") && !strcmp(arg,"consolemode")) {
-        sf_svc = service_find_by_name("surfaceflinger");
-        zg_svc = service_find_by_name("zygote");
+    if (!msg.compare("restart") && !arg.compare("consolemode")) {
+        sf_svc = ServiceManager::GetInstance().FindServiceByName("surfaceflinger");
+        zg_svc = ServiceManager::GetInstance().FindServiceByName("zygote");
 
         if (sf_svc && zg_svc) {
-            service_stop(zg_svc);
-            service_stop(sf_svc);
-            service_start(sf_svc, NULL);
-            service_start(zg_svc, NULL);
+            zg_svc->Stop();
+            sf_svc->Stop();
+            sf_svc->Start();
+            zg_svc->Start();
         } else {
             ERROR("Required services not found to toggle console mode");
         }
