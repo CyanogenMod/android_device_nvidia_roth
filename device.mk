@@ -27,7 +27,8 @@ TARGET_TEGRA_VERSION := t114
 TARGET_TEGRA_TOUCH := raydium
 TARGET_TEGRA_DISABLE_OVERLAY := true
 
-$(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
 $(call inherit-product-if-exists, vendor/nvidia/roth/roth-vendor.mk)
 
