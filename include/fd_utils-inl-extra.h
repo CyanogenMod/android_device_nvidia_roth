@@ -14,4 +14,5 @@
  * limitations under the License.
  */
 #define PATH_WHITELIST_EXTRA_H \
-    "/dev/knvmap",
+    "/dev/knvmap", \
+    "/dev/nvhost-ctrl",
